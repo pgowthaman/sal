@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>register page</title>
+</head>
+<style>
+/* body { 
+  background: url("http://www.planwallpaper.com/static/images/744081-background-wallpaper.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
+</style>
+<body>
+
+<body>
+<div data-ng-show='user.errorMessage'>
+			<div class="alert alert-danger fade in">{{user.errorMessage}}</div>
+
+		</div>
+<form data-ng-submit="submit()" name="myForm" class="form-horizontal">
+    
+
+        <!-- Form Name -->
+        <h2 style="text-align:center" >Register page</h2>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="name" style="text-color:white">Register as....</label>  
+          <div class="col-md-4">
+         <div class="container">
+							<div class="radio">
+								<label class="radio-inline"> <input type="radio" id="Role"
+									name="role" value="STUDENT" data-ng-model="user.role" >
+									Student
+								</label> <label class="radio-inline"> <input type="radio" id="Role"
+									name="role" value="ALUMINI" data-ng-model="user.role" >
+									Alumni
+								</label> <label class="radio-inline"> <input type="radio" id="Role"
+									name="role" value="EMPLOYEE" data-ng-model="user.role" >
+									Employee
+								</label>
+							</div>
+          </div>
+        </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group" >
+          <label class="col-md-4 control-label" for="fristname" >FirstName</label>  
+          <div class="col-md-4">
+         <input type="text" data-ng-model="user.fName" id="fristname" class="userid form-control input-sm"
+										placeholder="Enter your ID" required ng-minlength="3" />
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="lastname">LastName</label>  
+          <div class="col-md-4">
+         <input type="text" data-ng-model="user.lName" id="lastname"
+										class="username form-control input-sm"
+										placeholder="Enter your name" required ng-minlength="3" />
+          </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="pass">Password </label>
+          <div class="col-md-4">
+            <input type="password" data-ng-model="user.password"
+										id="pass" class="username form-control input-sm"
+										placeholder="Enter your password" required ng-minlength="3" />
+          </div>
+        </div>
+		
+		<!-- Password input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="confirmpass">Confirm Password </label>
+          <div class="col-md-4">
+            <input type="password" 
+										id="confirmpass" class="username form-control input-sm"
+										placeholder="Enter your password" required ng-minlength="3" />
+          </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="email">Email</label>
+          <div class="col-md-4">
+           <input type="email" data-ng-model="user.emailId" id="email"
+										class="email form-control input-sm"
+										placeholder="Enter your Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required />
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="contact">mobile</label>  
+          <div class="col-md-4">
+          <input type="tel" data-ng-model="user.phoneNo" id="contact"
+										class="mobile form-control input-sm"
+										placeholder="Enter your contact number" pattern="[9|7|8][0-9]{9}" required />
+    
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="address">Address</label>  
+          <div class="col-md-4">
+          <input type="text" width="100" height="50"
+										data-ng-model="user.address" id="address"
+										class="form-control input-sm"
+										placeholder="Enter your Address." />
+    
+          </div>
+        </div>
+
+       
+        <!-- Button (Double) -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="save"></label>
+          <div class="col-md-8">
+            <button id="save" type="submit" name="save" onclick="Validate()" class="btn btn-success">Save</button>
+           
+          </div>
+        </div>
+         </form>
+          <p style="text-color:white">Already registered login here</p>
+           <a href="#/login"> <button   class="btn btn-primary">Login</button></a>
+
+	<script>
+		function Validate() {
+			var password = document.getElementById("pass").value;
+			var confirmpass = document.getElementById("confirmpass").value;
+			if (password != confirmpass) {
+				alert("Password does Not Match.");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</body>
+</html>

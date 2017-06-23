@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login page</title>
+</head>
+<body>
+
+ <form name="form" data-ng-submit="login()" role="myForm"  class="form-horizontal">
+<div data-ng-show='user.errorMessage'>
+					<div class="alert alert-danger fade in">
+						{{user.errorMessage}}</div>
+
+				</div>
+
+<!-- Form Name -->
+<h4 style="text-align:center">Login</h4>
+
+<!-- Text input-->
+<div class="form-group" ng-class="{ 'has-error': form.userid.$dirty && form.userid.$error.required }">
+  <label class="col-md-4 control-label" for="email" >EmailId</label>  
+  <div class="col-md-4">
+  <input type="text" name="email" id="email" class="form-control" data-ng-model="user.emailId" required />
+            <span ng-show="form.userid.$dirty && form.userid.$error.required" class="help-block">User Id is required</span>    
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+  <label class="col-md-4 control-label" for="password" >Password</label>
+  <div class="col-md-4">
+   <input type="password" name="password" id="password" class="form-control" data-ng-model="user.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" type="submit" ng-disabled="form.$invalid || ctrl.dataLoading" class="btn btn-success btn-sm">Login</button>
+  </div>
+</div>
+
+
+</form>
+
+  <p>Not Registred? <a href="#/register">Register here</a></p>
+  </div>
+        
+
+
+</body>
+</html>

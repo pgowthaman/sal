@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title></title>
+</head>
+<body>
+<h4 style="text-align:center">	
+					Update Blog
+			</h4>
+				<div class="formcontainer" style="text-align:center">
+					<form  name="myForm"
+						class="form-horizontal">
+									<div hidden>
+										<label>UserId</label> <input type="text"
+											data-ng-model="blog.blogId">
+									</div>
+
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="title">Title</label>
+								<div class="col-md-7">
+									<input type="text" data-ng-model="blog.title"
+										id="password" class="username form-control input-sm"
+										placeholder="Enter your blog title" required ng-minlength="3" />
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="description">description</label>
+								<div class="col-md-7">
+									<textarea data-ng-model="blog.description"
+										placeholder="Description.." class="form-control" required
+										rows="12"></textarea>
+
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-actions floatRight">
+								<input type="submit" 
+									class="btn btn-primary btn-sm" data-ng-click="update()">
+								<button type="button" data-ng-click="reset()"
+									class="btn btn-warning btn-sm">Reset Form</button>
+							</div>
+						</div>
+					</form>
+				</div>
+	
+</body>
+</html>

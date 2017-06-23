@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-brown.css">
+<title>Insert title here</title>
+</head>
+<body>
+	<h4 style="text-align:center">	
+					create job
+			</h4>
+				<div class="formcontainer" style="text-align:center">
+					<form  name="myForm" data-ng-submit="submit()"
+						class="form-horizontal">
+
+						
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="title">Title</label>
+								<div class="col-md-7">
+									<input type="text" data-ng-model="job.title"
+										id="password" class="username form-control input-sm"
+										placeholder="Enter your job title" required ng-minlength="3" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="title">Company</label>
+								<div class="col-md-7">
+									<input type="text" data-ng-model="job.company"
+										id="password" class="username form-control input-sm"
+										placeholder="Enter the company " required ng-minlength="3" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="title">Salary</label>
+								<div class="col-md-7">
+									<input type="text" data-ng-model="job.salary"
+										id="password" class="username form-control input-sm"
+										placeholder="Enter the salary" required ng-minlength="3" />
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="title">Qualification</label>
+								<div class="col-md-7">
+									<input type="text" data-ng-model="job.qualification"
+										id="password" class="username form-control input-sm"
+										placeholder="Enter required Qualification" required ng-minlength="3" />
+								</div>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="form-group col-md-12">
+								<label class="col-md-2 control-lable" for="description">Description</label>
+								<div class="col-md-7">
+									<textarea data-ng-model="job.description"
+										placeholder="Description.." class="form-control" required
+										rows="12"></textarea>
+
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-actions floatRight">
+								<input type="submit" 
+									class="btn btn-primary btn-sm" value="submit">
+								<button type="button" data-ng-click="reset()"
+									class="btn btn-warning btn-sm">Reset Form</button>
+							</div>
+						</div>
+					</form>
+				</div>
+
+
+</body>
+</html>

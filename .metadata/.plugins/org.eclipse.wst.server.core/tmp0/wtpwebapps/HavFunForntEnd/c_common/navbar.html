@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+    $(document).ready(
+			function() {
+				$(".dropdown").hover(
+						function() {
+							$('.dropdown-menu', this).not('.in .dropdown-menu')
+									.stop(true, true).slideDown("400");
+							$(this).toggleClass('open');
+						},
+						function() {
+							$('.dropdown-menu', this).not('.in .dropdown-menu')
+									.stop(true, true).slideUp("400");
+							$(this).toggleClass('open');
+						});
+			});
+    </script>
+    <style>
+    .navbar{
+ background: transparent !important;}
+    </style>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+      <li style="text-color:white"><a href="#/listofBlog">Home</a></li>
+       <li class="dropdown" data-ng-show="currentUser" >
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Friend<span class="caret"></span></a>
+      <ul class="dropdown-menu" >
+        <li data-ng-show="currentUser"><a href="#/friendList">View Friend</a></li>
+       <li><a href="#/userList">Search Friend</a></li>
+      </ul>
+    </li>
+     <li class="dropdown" data-ng-show="currentUser" >
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Blog<span class="caret"></span></a>
+      <ul class="dropdown-menu">
+       <li data-ng-show="currentUser.role=='ADMIN' || currentUser.role=='EMPLOYEE'"><a href="#/addNew">Create Blog</a></li>
+       <li><a href="#/listofBlog">view Blog</a></li>
+      </ul>
+    </li>
+    <li class="dropdown" data-ng-show="currentUser" >
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Job<span class="caret"></span></a>
+      <ul class="dropdown-menu" >
+        <li data-ng-show="currentUser.role=='ADMIN' || currentUser.role=='EMPLOYEE'"><a href="#/addJob" >post job</a></li>
+       <li><a href="#/listOfJobs">Search Job</a>        </li>
+      </ul>
+    </li>
+    <li class="dropdown" data-ng-show="currentUser" >
+       <a class="dropdown-toggle" data-toggle="dropdown"  href="#">Chat<span class="caret"></span></a>
+      <ul class="dropdown-menu" >
+        <li><a href="#/chatPage">Lets Chat</a></li>
+      </ul>
+    </li>
+   </ul>
+    
+   <ul class="nav navbar-nav navbar-right">
+					<li class="dropdown" data-ng-show="currentUser"><a href=""
+						class="dropdown-toggle" data-toggle="dropdown"><span
+							class="glyphicon glyphicon-user"></span>{{currentUser.fName +" "
+							+currentUser.lName}}<span class="caret"></span></a>
+
+						<ul class="dropdown-menu">
+							<li data-ng-show="currentUser"><a href="">View Profile</a></li>
+
+						</ul></li>
+					<li data-ng-hide="currentUser" ><a href="#/register"><span
+							class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li data-ng-hide="currentUser" ><a href="#/login"><span
+							class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li data-ng-show="currentUser" ><a type="button" href=""
+						data-ng-click="logout()"><span
+							class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+
+				</ul>
+
+  
+   
+ </nav>
+</body>
+</html>

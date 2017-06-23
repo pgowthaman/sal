@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-brown.css">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="w3-container w3-content"
+		style="max-width: 1400px; margin-top: 20px"></div>
+				<div class="w3-col m7">
+
+				<div class="w3-row-padding">
+					<div class="w3-col m12">
+						<div class="w3-card-2 w3-round w3-white">
+							<div class="w3-container w3-padding">
+								<input type="text" class="w3-border w3-padding "
+									placeholder="Search Friends" style="width: 600px"
+									data-ng-model="search"></input>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="w3-container w3-card-2 w3-white w3-round w3-margin"
+					data-ng-repeat="mf in myFriends | filter:search">
+					<br>
+					<h4>{{mf.friendId}}</h4>
+					<div style="float: right">
+						<a type="button" class="w3-btn w3-theme-d2 w3-margin-bottom"
+							href="" data-ng-click="unFriend(mf.friendId)"> <i
+							class="fa fa-pencil-square-o"></i> UnFriend
+						</a>
+					</div>
+				</div>
+				<!-- End Middle Column -->
+			</div>
+
+			<!-- Right Column -->
+			
+
+				<div class="w3-card-2 w3-round w3-white w3-center"
+					data-ng-repeat="fr in friendRequests">
+					<div class="w3-container">
+						<p>Friend Request</p>
+						<div class="w3-row w3-opacity">
+							<div class="w3-half">
+								<button class="w3-btn w3-green w3-btn-block w3-section"
+									title="Accept" data-ng-click="acceptFriend(fr.userID)">
+									<i class="fa fa-check"></i>
+								</button>
+							</div>
+							<div class="w3-half">
+								<button class="w3-btn w3-red w3-btn-block w3-section"
+									title="Decline" data-ng-click="rejectFriend(fr.userID)">
+									<i class="fa fa-remove"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+</body>
+</html>

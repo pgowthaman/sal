@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-brown.css">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="w3-container w3-content"
+		style="max-width: 1400px; margin-top: 20px"></div>
+				<div class="w3-col m7">
+
+				<div class="w3-row-padding">
+					<div class="w3-col m12">
+						<div class="w3-card-2 w3-round w3-white">
+							<div class="w3-container w3-padding">
+								<input type="text" class="w3-border w3-padding "
+									placeholder="Search Friends" style="width: 600px"
+									data-ng-model="search"></input>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="w3-container w3-card-2 w3-white w3-round w3-margin"
+					data-ng-repeat="us in users | filter:search">
+					<div data-ng-hide="us.emailId == currentUser.emailId">
+					<br>
+					<h4>{{us.fName + " " + us.lName}}</h4>
+						<p style="margin-top: 35px;">EmailId : {{us.emailId}}</p>
+						<p>Contact No : {{us.phoneNo}}</p>
+						<div style="float: right">
+							<button class="w3-btn w3-theme w3-margin-bottom"
+								data-ng-click="sendFriendRequest(us.emailId); disableButton(us)"
+								data-ng-disabled="us.disabled">
+								<i class="fa fa-pencil-square-o"></i> Send Friend Request
+							</button>
+						</div>
+					</div>
+				</div>
+				</div>
+</body>
+</html>
